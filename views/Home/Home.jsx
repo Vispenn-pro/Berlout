@@ -1,5 +1,5 @@
 import {View, Button} from "react-native";
-import Logo from "../../views/logo/Logo";
+import Logo from "../../components/logo/Logo";
 import Homestyle from './Home.scss';
 
 const Home = () => {

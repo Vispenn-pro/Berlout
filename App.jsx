@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import { StatusBar } from 'expo-status-bar';
 import {View} from 'react-native';
 import Appstyles from './App.scss';
-import Home from "./components/Home/Home";
+import Home from "./views/Home/Home";
 import AnimatedSplash from "react-native-animated-splash-screen";
 
 const App = () => {
