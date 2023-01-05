@@ -1,12 +1,46 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { View, StyleSheet, Pressable, Image, Text } from "react-native";
 import Logo from "../../components/Logo";
 import loader from "../../assets/images/loader.gif";
 import dummyPicture from "../../assets/images/fff.png";
+import { gql } from "graphql-request";
 
 const Roll = () => {
   const [areResultsDisplayed, setResultsDisplayed] = useState(false);
   const [isLoading, setLoading] = useState(false);
+
+  const query = gql`
+        business(id: "yelp-san-francisco"){
+            name
+            url
+        }
+    `
+
+  const fetchYelpApi = async() => {
+    const options = {
+        method: 'POST',
+        headers: {
+            Authorization: 'Bearer 9F6FcGRFd1Jm5SlP3iuddMVV3SnofH_JDSxkN2O_xVUvKo6t_4jSy0KGTZ4Es9S-rRMVla4BfA7Da9GfW1XK8tyo-POjhKPT3t_ci50-NbjU2PMbbyOmaKGADdK2Y3Yx',
+            'X-RapidAPI-Key': '09f6bf4bb2mshbf4c36ec87b263bp1cb4e1jsn4e830726d673',
+            'X-RapidAPI-Host': 'yelp-graphql1.p.rapidapi.com',
+            'Accept-Language': 'en_US',
+        },
+        body: query
+    };
+
+    let responseApi;
+    
+    await fetch('https://yelp-graphql1.p.rapidapi.com/v3/graphql', options)
+        .then(response => response.json())
+        .then(response => responseApi = response)
+        .catch(err => console.error(err));
+
+    return responseApi;
+  }
+
+  useEffect(() => {
+    console.log(fetchYelpApi());
+  }, []);
 
   const onPressRoll = async () => {
     setLoading(true);
