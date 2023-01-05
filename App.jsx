@@ -25,7 +25,6 @@ const App = () => {
                 <StatusBar style="auto" />
             </AnimatedSplash>
         </NavigationContainer>
-        
     );
 }
 export default App;
