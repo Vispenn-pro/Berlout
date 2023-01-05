@@ -1,13 +1,15 @@
-import {Image, View} from "react-native";
-import Appstyles from './Logo.scss';
+import {Image, StyleSheet} from "react-native";
 import logo from '../../assets/images/logo.png';
 
 const Logo = () => {
-    return(
-        <View>
-            <Image style={Appstyles.logo} source={logo}></Image>
-        </View>
-    )
+    return <Image source={logo} style={styles.logo}></Image>;
 }
+
+const styles = StyleSheet.create({
+    logo: {
+        maxHeight: 40,
+        maxWidth: 256
+    }
+})
 
 export default Logo;
