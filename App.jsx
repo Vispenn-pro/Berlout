@@ -17,20 +17,16 @@ const App = () => {
 
     return (
         <NavigationContainer>
-            <Drawer/>
+            <AnimatedSplash
+                translucent={true}
+                isLoaded={loaded}
+                logoImage={require("./assets/images/logo.png")}
+                backgroundColor={"#e3e3e3"}
+                logoWidth={256}
+            >
+                <Drawer/>
+            </AnimatedSplash>
         </NavigationContainer>
-        // <AnimatedSplash
-        //     translucent={true}
-        //     isLoaded={loaded}
-        //     logoImage={require("./assets/images/logo.png")}
-        //     backgroundColor={"#e3e3e3"}
-        //     logoWidth={256}
-        // >
-        //     <View style={Appstyles.container}>
-        //         <Home />
-        //         <StatusBar style="auto" />
-        //     </View>
-        // </AnimatedSplash>
     );
 }
 export default App;
