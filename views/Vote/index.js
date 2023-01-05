@@ -6,6 +6,8 @@ import CardsSwipe from 'react-native-cards-swipe';
 const Vote = () => {
   const [temp, setTemp] = useState('');
   const [name,setName] = useState('');
+
+  //cas test
   const cardsData = [
     {
       title: "nyan cat",
@@ -27,16 +29,33 @@ const Vote = () => {
     },
   ];
 
+  const handleSwipe = (index, swipe) => {
+    const card = cardsData.at(index)
+    const vote = {
+      date: new Date(),
+      name:name,
+      restaurant:card.title,
+      response:swipe,
+    }
+    console.log(vote);
+  }
+
   return (
     <View style={styles.container}>
       {name !== '' ? <Text>Hello {name}</Text> : null}
       {name !== '' ?
       <CardsSwipe
+        loop={false}
         cards={cardsData}
         cardContainerStyle={styles.cardContainer}
         renderCard={(data) => (
           <Card restaurant={data}/>
         )}
+        renderNoMoreCard={() => (
+          <Text>plus de propositions</Text>
+        )}
+        onSwipedLeft={(index) => handleSwipe(index, false)}
+        onSwipedRight={(index) => handleSwipe(index, true)}
       />
       :
       <View style={styles.form}>
