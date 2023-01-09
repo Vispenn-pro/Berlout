@@ -37,7 +37,6 @@ const Vote = () => {
       restaurant:card.title,
       response:swipe,
     }
-    console.log(vote);
   }
 
   return (
