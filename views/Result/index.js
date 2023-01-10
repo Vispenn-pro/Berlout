@@ -1,5 +1,5 @@
 import React from 'react';
-import { View } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 import { ResultChart } from '../../components/ResultChart';
 
 export const Result = () => {
@@ -54,8 +54,16 @@ export const Result = () => {
     },
   ]
   return (
-    <View>
+    <View style={styles.container}>
       <ResultChart propositions={propositions} votes={votes}/>
     </View>
   )
 }
+
+export const styles = StyleSheet.create({
+  container:{
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center'
+  }
+})

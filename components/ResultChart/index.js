@@ -31,19 +31,18 @@ export const ResultChart = ({ propositions, votes }) => {
     <View>
         <BarChart
             style={{
-                marginVertical: 8,
                 borderRadius: 16
               }}
             data={data}
             width={Dimensions.get("window").width}
-            height={220}
+            height={500}
             chartConfig={{
-                backgroundColor: "#e26a00",
-                backgroundGradientFrom: "#fb8c00",
-                backgroundGradientTo: "#ffa726",
+                backgroundColor: "rgba(255, 0, 0, 0)",
+                backgroundGradientFrom: "rgba(255, 0, 0, 0)",
+                backgroundGradientTo: "rgba(255, 0, 0, 0)",
                 decimalPlaces: 2, // optional, defaults to 2dp
-                color: (opacity = 1) => `rgba(0, 0, 0, ${opacity})`,
-                labelColor: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
+                color: () => `rgba(0, 0, 0, 1)`,
+                labelColor: () => `rgba(0, 0, 0, 1)`,
                 style: {
                   borderRadius: 16
                 },
@@ -53,7 +52,8 @@ export const ResultChart = ({ propositions, votes }) => {
                   stroke: "#ffa726"
                 }
               }}
-            verticalLabelRotation={30}
+            fromZero
+            verticalLabelRotation={0}
         />
     </View>
   )
