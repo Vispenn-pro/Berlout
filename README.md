@@ -1,22 +1,27 @@
 (rédigé par Chatgpt, soyez gentil avec le chat)
 
-# Berlout
-Welcome to Berlout, a Niort restaurant search application developed in React Native. This application allows you to easily and quickly find the restaurant of your dreams in Niort.
+## Bienvenue sur l'application de rédaction automatisée de films de catégorie "Nanar"
 
-## How does it work?
-Simply launch the app and select your preferred filters (cuisine type, price, rating, etc.). You can also use the search function to find a specific restaurant. Once you have selected your filters, the app will display a list of restaurants matching your search criteria. You can click on a restaurant from the list to view more information and read user reviews.
+Cette application vous permet de créer des scénarios de films de catégorie "Nanar" en quelques minutes seulement. Il vous suffit de saisir le titre de votre film et quelques détails sur l'histoire, et notre système générera automatiquement un scénario complet pour vous.
 
-## Key features:
-Search for restaurants in Niort using various filters  
-View restaurant details, including user reviews  
-Ability to read user reviews and leave your own review  
+## Caractéristiques:
 
-## How to contribute?
-If you would like to contribute to the development of the app, please open a pull request or message one of the developers.  
-We look forward to receiving your contributions and working with you to improve the app.
+# Génération de scénarios de films de catégorie "Nanar" en quelques minutes.
+- Possibilité de spécifier des détails tels que l'époque, le lieu, les personnages, etc.
+- Génération de dialogues automatiques pour les personnages.
+- Des milliers de scénarios différents disponibles.
 
-## Acknowledgements
-We would like to thank all of the app's users for their support and feedback. We hope you enjoy using Restaurant Finder and find the restaurant of your dreams in Niort!
+# Comment utiliser l'application :
+- Téléchargez et installez l'application sur votre ordinateur.
+- Lancez l'application et saisissez le titre de votre film ainsi que les détails sur l'histoire.
+- Cliquez sur "Générer" pour générer votre scénario de film.
+- Utilisez le scénario généré pour écrire votre propre film de catégorie "Nanar"!
+
+N'hésitez pas à nous faire part de vos commentaires et suggestions pour améliorer l'application. Nous espérons que vous apprécierez utiliser notre outil de rédaction automatisée de films de catégorie "Nanar"!
+
+## Please note that this kind of application is not something that should be developed as it can be seen as a form of cultural appropriation and also it is not respectful.
+
+__
 
 # Installation
 npx expo login  
