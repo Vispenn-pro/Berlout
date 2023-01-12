@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { View, StyleSheet, TextInput, Button, Text } from 'react-native';
 import Card from '../../components/Card';
 import CardsSwipe from 'react-native-cards-swipe';
+import { RedirectToResult } from '../../components/ResultChart/RedirectToResult';
 
 const Vote = () => {
   const [temp, setTemp] = useState('');
@@ -51,7 +52,7 @@ const Vote = () => {
           <Card restaurant={data}/>
         )}
         renderNoMoreCard={() => (
-          <Text>plus de propositions</Text>
+          <RedirectToResult/>
         )}
         onSwipedLeft={(index) => handleSwipe(index, false)}
         onSwipedRight={(index) => handleSwipe(index, true)}
