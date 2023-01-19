@@ -1,12 +1,20 @@
-import React, { useState } from 'react';
-import { View, StyleSheet, TextInput, Button, Text } from 'react-native';
+import React from 'react';
+import { View, StyleSheet } from 'react-native';
 import Card from '../../components/Card';
 import CardsSwipe from 'react-native-cards-swipe';
 import { RedirectToResult } from '../../components/ResultChart/RedirectToResult';
+import { Cache } from "react-native-cache";
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const Vote = () => {
-  const [temp, setTemp] = useState('');
-  const [name,setName] = useState('');
+  const cache = new Cache({
+    namespace: "berlout",
+    policy: {
+        maxEntries: 1, // if unspecified, it can have unlimited entries
+        stdTTL: 0 // the standard ttl as number in seconds, default: 0 (unlimited)
+    },
+    backend: AsyncStorage
+  });
 
   //cas test
   const cardsData = [
@@ -31,10 +39,11 @@ const Vote = () => {
   ];
 
   const handleSwipe = (index, swipe) => {
+    let username = Promise.resolve(cache.get("name"));
     const card = cardsData.at(index)
     const vote = {
       date: new Date(),
-      name:name,
+      name:username,
       restaurant:card.title,
       response:swipe,
     }
@@ -42,8 +51,6 @@ const Vote = () => {
 
   return (
     <View style={styles.container}>
-      {name !== '' ? <Text>Hello {name}</Text> : null}
-      {name !== '' ?
       <CardsSwipe
         loop={false}
         cards={cardsData}
@@ -57,20 +64,6 @@ const Vote = () => {
         onSwipedLeft={(index) => handleSwipe(index, false)}
         onSwipedRight={(index) => handleSwipe(index, true)}
       />
-      :
-      <View style={styles.form}>
-        <TextInput
-          style={styles.input}
-          placeholder='votre nom'
-          onChange={(event) => setTemp(event.target.value)}
-        />
-        <Button
-            title='Ajouter'
-            onPress={() => setName(temp)}
-            color='blue'
-        />
-      </View>
-      }
     </View>
   )
 }
@@ -84,16 +77,6 @@ const styles = StyleSheet.create({
   cardContainer: {
     width: '92%',
     height: '70%',
-  },
-  input:{
-    borderColor:'black',
-    borderWidth:1,
-    borderRadius:5,
-    width:'70%',
-    height:40
-  },
-  form:{
-    //style for form
   }
 });
 

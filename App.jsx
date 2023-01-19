@@ -3,7 +3,7 @@ import React, {useState} from "react";
 import { StatusBar } from 'expo-status-bar';
 import AnimatedSplash from "react-native-animated-splash-screen";
 import { NavigationContainer } from '@react-navigation/native';
-import Drawer from './components/Drawer';
+import { StackNavigation } from './components/StackNavigation';
 
 const App = () => {
     const [loaded, setLoaded] = useState(false);
@@ -21,7 +21,7 @@ const App = () => {
                 backgroundColor={"#e3e3e3"}
                 logoWidth={256}
             >
-                <Drawer/>
+                <StackNavigation/>
                 <StatusBar style="auto" />
             </AnimatedSplash>
         </NavigationContainer>
